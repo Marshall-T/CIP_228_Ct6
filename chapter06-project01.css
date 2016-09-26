@@ -40,6 +40,10 @@ form p {
    margin-top: 0.5em;
 }
 
+astyle {
+   background-color: #800000;
+}
+
 .box {
    border: 1pt solid #95BEF0;
    padding: 0.5em;

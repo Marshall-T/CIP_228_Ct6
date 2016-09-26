@@ -22,30 +22,39 @@
  */  
 
     // set empty backgrounds to red
-    function RedBackground(e, f) {
+    function RedBackground(f) {
         var backColor = "#800000";
+
+//         temp variable value checking  WHY null?
+//        document.write("mainForm: " + e + " &nbsp textTag: " + f + " &nbsp f len: " + f.length);
         
-        // temp variable value checking  WHY null?
-        document.write("mainForm: " + e + " &nbsp textTag: " + f + " &nbsp f len: " + f.length);
-        
-        // step throught array of tags
-        // f.length = 0  because of NULL
-        // should not "f" / "textTag" not return an array
-        // of f / textTag ie f[i] / textTag[i] ?
+//         step throught array of tags
         for (i = 0; i <= f.lenght ; i++) {
-            console.log (i = " textTag[" + i + "]: " + f[i]);
-            f[i].style.backgroundcolor = backColor;
+            console.log (i + " i, aTag[" + i + "]: ");
         }
+        
+//console.log (i + " aTag[" + i + "]: " + f[i]);
+//document.write("mainForm: " + e + " &nbsp textTag: " + f + " &nbsp f len: " + f.length + " - " + i);
+
     }
 
 var backColor = "#800000";
-var mainForm = document.getElementById("mainForm");
-var textTag = document.getElementsByTagName("input");
+var mainForm = document.getElementById("table");
+var aTag = document.getElementsByTagName("required");
 
-RedBackground(mainForm, textTag);
+// aTag.style.backgroundcolor = "#800000";
+// aTag.style.borderWidth = "5px";
 
-    // another value check, getting desperate
-    console.log("mainForm: " + mainForm + "  textTag: " + textTag);
+aTag.className = "aStyle";
+
+
+var result = aTag.className;
+
+console.log ("mainForm = " + mainForm);
+console.log ("aTag: " + aTag + " - aTag.class: " + aTag.className +
+    " - .item: " + aTag.item + ".value: " + aTag.value);
+
+RedBackground(aTag);
 
 /* testing 1 2 .. these were originally textTag.addE....
  * they / one would display but throw an error.??
