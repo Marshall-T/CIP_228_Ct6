@@ -1,84 +1,70 @@
-/*
- *  Marshall Taylor
- *  CIP 228
- *  Ct 6 P 1
+
+/*  Marshall Taylor
+    CIP 228
+    Chapter 6 Project 1
+*/
+
+
+document.getElementById("mainForm").onsubmit = function(e) {
+var hiLite = document.getElementById("hiLite").value;
+//  var rectangleHiLite = document.getElementById("rectangleHiLite").value;
+
+    if ( (hiLite == null) || (hiLite == "") ) {
+        e.preventDefault();
+        alert ("You must enter Title, Description, & √ License agreement");
+
+        var colorTag = document.getElementById("hiLite");
+        colorTag.className = "red";
+        
+/*  none of these returns a value (except "hiLite")
+ *  how do we terminate the "loop"
+ *  also the rectangel refuses to edit
  */
 
-/*  There is not much logic here yet.  My first attempts to do
- *  anything hit a brick wall, so I started researching
- *  and doing some trial & error.  The following statement,
- *  taken right from the text, and identical to another
- *  student's (save the variable name), does not work:
- *
- *  var mainForm = document.getElementById("mainForm");
- *  
- *  His program returns an object (I think) and I get NULL.
- *  I tried it  on Safari, FireFox, FireFox Developer, Chrome,
- *  and Opera. I believe all are up to date.
- *  I tried literally dozens of variations of that stmt and
- *  this statment:
- *  
- *  var textTag = document.getElementsByTagName("input");
- */  
-
-    // set empty backgrounds to red
-    function RedBackground(f) {
-        var backColor = "#800000";
-
-//         temp variable value checking  WHY null?
-//        document.write("mainForm: " + e + " &nbsp textTag: " + f + " &nbsp f len: " + f.length);
-        
-//         step throught array of tags
-        for (i = 0; i <= f.lenght ; i++) {
-            console.log (i + " i, aTag[" + i + "]: ");
-        }
-        
-//console.log (i + " aTag[" + i + "]: " + f[i]);
-//document.write("mainForm: " + e + " &nbsp textTag: " + f + " &nbsp f len: " + f.length + " - " + i);
+/*
+  console.log ('hiLite');
+  console.log (colorTag);
+  console.log (hiLite);
+  console.log (hiLite.value);
+  console.log (hiLite.Text);
+  console.log (colorTag);
+*/
 
     }
 
-var backColor = "#800000";
-var mainForm = document.getElementById("table");
-var aTag = document.getElementsByTagName("required");
+    document.getElementById("hiLite").onkeydown = function(e) {
+        var colorTag = document.getElementById("hiLite");
+        colorTag.className = "required";
+        
+    }
 
-// aTag.style.backgroundcolor = "#800000";
-// aTag.style.borderWidth = "5px";
+//  console.log (colorTag)
 
-aTag.className = "aStyle";
+ }
+ 
+/*
+document.getElementById("mainForm").onsubmit = function(e) {
+  var rectangleHiLite = document.getElementById("rectangleHiLite").value;
 
+    if ( (rectangleHiLite == null) || (rectangleHiLite == "") ) {
+        e.preventDefault();
+        alert ("You must enter √ the License agreement");
 
-var result = aTag.className;
+        var rectangleColor = document.getElementById("rectangleHiLite");
+        rectangleColor.className = "red";
 
-console.log ("mainForm = " + mainForm);
-console.log ("aTag: " + aTag + " - aTag.class: " + aTag.className +
-    " - .item: " + aTag.item + ".value: " + aTag.value);
+    }
 
-RedBackground(aTag);
+    document.getElementById("rectangleHiLite").onkeydown = function(e) {
+        var rectangleColor = document.getElementById("rectangleHiLite");
+        rectangleColor.className = "required";
+    }
 
-/* testing 1 2 .. these were originally textTag.addE....
- * they / one would display but throw an error.??
- * Too many edits between then and now.
- */
+//  console.log (colorTag)
 
-//var textTag.addEventListener("click", alert('Hello There'));
-//var textTag.addEventListener("mouseover", alert("Good-by"));
-
-/*  Attemps include: (signs of desperation).
- *  These taken out of line, at one time or another, had varing
- *  degrees of success, but none operated in context error free
- *  most were executed with a MessageBox.Show()
- *  for these, varible names have changes textTag is now input
- *
- *  textTag.onclick = myEvent(textTag)
- *  textTag.style.color = "#800000";
- *  textTag.style.backgroundColor = "#800000";
- *
- *  document.getElementById("required").innerHTML = " background.Color = #800000";
- *
- *  var oldTag = textTag.innerHTML;
- *  required.innerHTML = oldTag + " background.Color = #800000";
- *
- *  textTag.style.backgroundColor = "#800000";
- *  
- */
+ }
+*/
+/*
+console.log (mainForm);
+console.log(typeof mainForm);
+*/
