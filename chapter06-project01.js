@@ -4,7 +4,6 @@
     Chapter 6 Project 1
 */
 
-
 document.getElementById("mainForm").onsubmit = function(e) {
 var hiLite = document.getElementById("hiLite").value;
 //  var rectangleHiLite = document.getElementById("rectangleHiLite").value;
@@ -15,21 +14,6 @@ var hiLite = document.getElementById("hiLite").value;
 
         var colorTag = document.getElementById("hiLite");
         colorTag.className = "red";
-        
-/*  none of these returns a value (except "hiLite")
- *  how do we terminate the "loop"
- *  also the rectangel refuses to edit
- */
-
-/*
-  console.log ('hiLite');
-  console.log (colorTag);
-  console.log (hiLite);
-  console.log (hiLite.value);
-  console.log (hiLite.Text);
-  console.log (colorTag);
-*/
-
     }
 
     document.getElementById("hiLite").onkeydown = function(e) {
@@ -42,7 +26,7 @@ var hiLite = document.getElementById("hiLite").value;
 
  }
  
-/*
+
 document.getElementById("mainForm").onsubmit = function(e) {
   var rectangleHiLite = document.getElementById("rectangleHiLite").value;
 
@@ -63,7 +47,7 @@ document.getElementById("mainForm").onsubmit = function(e) {
 //  console.log (colorTag)
 
  }
-*/
+
 /*
 console.log (mainForm);
 console.log(typeof mainForm);
