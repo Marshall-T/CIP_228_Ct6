@@ -4,41 +4,72 @@
 */
 
 window.onload = function () {
-    var txt = "";
     
-    var aList = document.getElementsByTagName("*");
-    
+    var txt = "";    
     var nodeArray = new Array();
 
-    for (i = 0; i < aList.length; i++) {
+    //  load the array - finally figure the proper single step way to do this!
+    for (i = 0; i < document.getElementsByTagName("*").length; i++) {
         if (i > 4) {
-                //  Add the node to an array and increment array offset
-                nodeArray.push (aList[i].nodeName);
-                if (aList[i].hasAttributes()) {
-                    for (j = 0; j < aList[i].childNodes.length; j++) {
-//                        if (aList[i].childNodes[j].nodeType === 3 ) {
-  //                          console.log ('****');
-    //                        console.log (aList[i].childNodes[j].nodeType);
-      //                      console.log (aList[i].childNodes[j].nodeName);
-        //                }
-                    }
-                }
-//        txt = "Name " + i + " = " + aList[i].nodeName + " Type = " + aList[i].nodeType;
-//        console.log (txt);
+            //  Add the node to an array and increment array offset
+            nodeArray.push (document.getElementsByTagName("*")[i].nodeName);
         }
     }
 
+        console.log ('**X**');
+        console.log (nodeArray);
+
+        //  activate the style
+    var showNode = function (element) {
+        element.classList.add ("hoverNode");
+    }
+
+    //  de-activate the style
+    var removeNode = function (element) {
+        element.classList.remove("hoverNode");
+    }
+
+    //  THIS IS A MESS, APPEND IS NOT RIGHT BUT TRYING
 // Loop through node array and append the child node with the node type, document.createElement
+
+    document.getElementById("calendar").onmouseover = function() {
+        var error = false;
+            showNode (document.getElementsByTagName("*")[i].nodeName);
+        return !error;
+        }
+        
+    document.getElementById("calendar").onmouseout = function() {
+        var error = false;
+            removeNode (document.getElementsByTagName("*")[i].nodeName);
+        return !error;
+        }
+        
+    document.getElementById("form").onmouseover = function() {
+        var error = false;
+            showNode (document.getElementsByTagName("*")[i].nodeName);
+        return !error;
+        }
+        
+    document.getElementById("form").onmouseout = function() {
+        var error = false;
+            removeNode (document.getElementsByTagName("*")[i].nodeName);
+        return !error;
+        }
+        
+//---------------------------------------------------
 
     //  trying to find a node ?
     for (var i = 0; i < nodeArray.length; i++){
-        //  trying to find a node ?
-        txt = document.getElementsBytagName + " - " + nodeArray[i];
-        console.log (txt);
-//        document.getElementsByName.appendChild(nodeArray[i]);
-    }
-    
-        console.log ('**X**');
-        console.log (nodeArray);
+        var oldTag = document.getElementsByTagName("*")[i];
+//        var oldTxt = oldTag.innerHTML;
+        var newTxt = '<' + nodeArray[i] + ' class="hoverNode"></nodeArray[i]>';
+ 
+    var node = document.createElement("nodeArray[i]");
+    var textnode = document.createTextNode(' class="hoverNode"');
+    node.appendChild(textnode);
+    document.getElementsByTagName("*")[i].appendChild(node);
+ 
+  }
 }
 // Loop through node array and append the child node with the node type, document.createElement
+
